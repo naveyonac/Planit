@@ -2,10 +2,13 @@ const mongoose = require('../db/connection')
 const Schema = mongoose.Schema
 
 const User = new Schema ({
-    username: String,
-    password: String
+    local: {
+        username: String,
+        password: String
+    }
 })
 
-mongoose.model('userModel', User)
+// mongoose.model('userModel', User)
 
-module.exports = mongoose 
+
+module.exports = mongoose.model('userModel', User)
